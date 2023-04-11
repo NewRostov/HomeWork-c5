@@ -2,22 +2,29 @@
 //Напишите программу, которая покажет количество чётных чисел в массиве.
 //[345, 897, 568, 234] -> 2
 
-Random rnd = new Random();
-int c = 0;
-Console.Write("Введите длину массива: ");
-int arrayLenght = Convert.ToInt32(Console.ReadLine());
-
-int[] array = new int[arrayLenght];
-for (int i = 0; i < arrayLenght; i++)
+internal class Program
 {
-    array[i] = rnd.Next(100, 999);
+    private static void Main(string[] args)
+    {
+        Random rnd = new Random();
+        int c = 0;
+        Console.Write("Введите длину массива: ");
+        int arrayLenght = Convert.ToInt32(Console.ReadLine());
 
-    Console.Write(array[i] + ", ");
+        int[] array = new int[arrayLenght];
+        for (int i = 0; i < arrayLenght; i++)
+        {
+            array[i] = rnd.Next(100, 999);
 
-    if (array[i] % 2 == 0) {
-        c++;
-    }
+            Console.Write(array[i] + ", ");
 
-}
-     Console.WriteLine();
+            if (array[i] % 2 == 0)
+            {
+                c++;
+            }
+
+        }
+        Console.WriteLine();
         Console.Write("Количество чётных чисел в массиве: " + c);
+    }
+}
